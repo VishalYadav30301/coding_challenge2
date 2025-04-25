@@ -6,6 +6,7 @@ import { AppService } from './app.service';
 import { AuthModule } from './auth/auth.module';
 import { CommonModule } from './common/common.module';
 import { LeaveModule } from './leave/leave.module';
+import { UserModule } from './users/user.module';
 
 @Module({
   imports: [
@@ -20,6 +21,7 @@ import { LeaveModule } from './leave/leave.module';
     }),
     CommonModule,
     AuthModule,
+    UserModule,
     LeaveModule,
   ],
   controllers: [AppController],

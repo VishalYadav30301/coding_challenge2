@@ -4,11 +4,13 @@ import { UserController } from './user.controller';
 import { UserService } from './user.service';
 import { User, UserSchema } from './schemas/user.schema';
 import { CommonModule } from '../common/common.module';
+import { S3Module } from 'src/s3_bucket/s3.module';
 
 @Module({
   imports: [
     MongooseModule.forFeature([{ name: User.name, schema: UserSchema }]),
-    CommonModule,
+    CommonModule,S3Module
+    
   ],
   controllers: [UserController],
   providers: [UserService],

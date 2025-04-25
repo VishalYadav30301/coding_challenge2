@@ -13,6 +13,7 @@ import { NotificationModule } from '../notification/notification.module';
 import { RedisModule } from '../redis/redis.module';
 import { NotificationService } from '../notification/notification.service';
 import { UserService } from '../users/user.service';
+import { S3Module } from '../s3_bucket/s3.module';
 
 @Module({
   imports: [
@@ -30,11 +31,12 @@ import { UserService } from '../users/user.service';
     MongooseModule.forFeature([{ name: User.name, schema: UserSchema }]),
     CommonModule,
     CacheModule.register({
-      ttl: 300, // 5 minutes
+      ttl: 300,
       max: 100,
     }),
     NotificationModule,
     RedisModule,
+    S3Module,
   ],
   controllers: [AuthController],
   providers: [AuthService, JwtStrategy, NotificationService, UserService],

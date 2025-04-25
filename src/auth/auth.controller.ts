@@ -67,7 +67,7 @@ export class AuthController {
   @Get('profile')
   @UseGuards(JwtAuthGuard)
   async getProfile(@Req() req: RequestWithUser) {
-    return this.authService.getProfile(req.user.sub);
+    return this.userService.getProfile(req.user.sub);
   }
 
   @Patch('profile')
@@ -76,6 +76,6 @@ export class AuthController {
     @Req() req: RequestWithUser,
     @Body() updateProfileDto: UpdateProfileDto,
   ) {
-    return this.authService.updateProfile(req.user.sub, updateProfileDto);
+    return this.userService.updateProfile(req.user.sub, updateProfileDto);
   }
 }

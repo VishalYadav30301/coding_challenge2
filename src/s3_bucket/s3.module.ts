@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
-import { S3BucketService } from './s3.service';
+import { S3Service } from './s3.service';
 
 @Module({
-  providers: [S3BucketService],
-  exports: [S3BucketService],
+  providers: [S3Service],
+  exports: [S3Service],
 })
-export class S3BucketModule {}
+export class S3Module {}
